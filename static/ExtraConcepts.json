@@ -1,0 +1,52 @@
+{
+    "professions": 
+    [
+        "Professor",
+        "Artist",
+        "Knight",
+        "Mage",
+        "Peasant",
+        "Soldier",
+        "Doctor",
+        "Programmer",
+        "Influencer",
+        "Therapist",
+        "Secretary",
+        "Pharmacist",
+        "Cashier"
+    ],
+    "abractIdeas": 
+    [
+        "Time",
+        "Space",
+        "Reality",
+        "Imagination",
+        "Illusion",
+        "Fiction",
+        "Amplitude",
+        "Frequency",
+        "Anatomy",
+        "History",
+        "Mathematics",
+        "Reading",
+        "Physical Activity",
+        "Sloth / Laziness / Inaction",
+        "Pride",
+        "Lust",
+        "Greed",
+        "Envy",
+        "Gluttony",
+        "Wrath",
+        "Apathy",
+        "Emotion",
+        "Willpower",
+        "Intelligence",
+        "Weather",
+        "Mindfulness",
+        "Nature",
+        "Patience",
+        "Impulsivity",
+        "Remembrance",
+        "Forgetfulness"
+    ]
+}

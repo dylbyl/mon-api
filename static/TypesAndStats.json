@@ -1,0 +1,40 @@
+{
+    "types" :
+    [
+        "Normal",
+        "Fighting",
+        "Flying",
+        "Poison",
+        "Ground",
+        "Rock",
+        "Bug",
+        "Ghost",
+        "Steel",
+        "Fire",
+        "Water",
+        "Grass",
+        "Electric",
+        "Psychic",
+        "Ice",
+        "Dragon",
+        "Dark",
+        "Fairy"
+    ],
+    "stats": 
+    [
+        "HP",
+        "Attack",
+        "Defense",
+        "Special Attack",
+        "Special Defense",
+        "Speed"
+    ],
+    "statDescriptors":
+    [
+        "Very High",
+        "High",
+        "Low",
+        "Very Low",
+        "Middling"
+    ]
+}
