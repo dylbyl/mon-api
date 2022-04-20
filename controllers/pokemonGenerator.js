@@ -32,7 +32,7 @@ class PokemonGenerator {
 			extraConcepts: this.generateRandomProperties(this.extraConcepts, 3),
 			foundIn: this.generateRandomProperties(this.foundIn, 3),
 			isLegendary: this.generateBooleanWithChanceToBeTrue(10),
-			evolutionStages: this.randomizer(3) + 1,
+			evolutionStages: this.generateEvolutionStages(),
 			hasMegaEvolution: this.generateBooleanWithChanceToBeTrue(25),
 			hasAlternateForm: this.generateBooleanWithChanceToBeTrue(35),
 			stats: this.generateStats(),

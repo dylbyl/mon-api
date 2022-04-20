@@ -1,21 +1,24 @@
-let baseDesignsJson = require('./baseDesigns.json');
-let extraConceptsJson = require('./extraConcepts.json');
-let foundInJson = require('./foundIn.json');
-let descriptorsJson = require('./descriptors.json');
-let funStatDescriptors = require('./funStatDescriptors.json');
-let typesAndStats = require('./typesAndStats.json');
+const baseDesignsJson = require('./baseDesigns.json');
+const extraConceptsJson = require('./extraConcepts.json');
+const foundInJson = require('./foundIn.json');
+const descriptorsJson = require('./descriptors.json');
+const funStatDescriptors = require('./funStatDescriptors.json');
+const typesAndStats = require('./typesAndStats.json');
 
-let baseDesigns = baseDesignsJson.animals
-	.concat(baseDesignsJson.objects)
-	.concat(baseDesignsJson.urbanLegends)
-	.concat(baseDesignsJson.professions);
-let extraConcepts = extraConceptsJson.abractIdeas
-	.concat(extraConceptsJson.professions);
-let foundIn = foundInJson.countries
-	.concat(foundInJson.environments);
-let descriptors = descriptorsJson.adjectives
-	.concat(descriptorsJson.nouns)
-	.concat(descriptorsJson.verbs);
+const concatenateJsonFile = (file) => {
+	let allEntries = [];
+	for(category in file) {
+		allEntries = allEntries.concat(file[category])
+	}
+	return allEntries;
+}
+
+const baseDesigns = concatenateJsonFile(baseDesignsJson);
+const extraConcepts = concatenateJsonFile(extraConceptsJson);
+const foundIn = concatenateJsonFile(foundInJson);
+const descriptors = concatenateJsonFile(descriptorsJson)
+
+
 
 module.exports = {
     baseDesigns,
