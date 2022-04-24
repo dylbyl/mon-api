@@ -22,6 +22,8 @@ class PokemonGenerator {
 	stats = jsonFiles.typesAndStats.stats;
 	funStatDescriptors = jsonFiles.funStatDescriptors;
 
+	// Puts everything into arrays for now to play nicely with React Native's Section list
+	// TODO rework this, change booleans back to true or false and change to yes/no on UI
 	generateMon = function () {
 		let types = this.generateTypes();
 
@@ -31,13 +33,13 @@ class PokemonGenerator {
 			descriptors: this.generateRandomProperties(this.descriptors, 3),
 			extraConcepts: this.generateRandomProperties(this.extraConcepts, 3),
 			foundIn: this.generateRandomProperties(this.foundIn, 3),
-			isLegendary: this.generateBooleanWithChanceToBeTrue(10),
-			evolutionStages: this.generateEvolutionStages(),
-			hasMegaEvolution: this.generateBooleanWithChanceToBeTrue(25),
-			hasAlternateForm: this.generateBooleanWithChanceToBeTrue(35),
+			isLegendary: [this.generateBooleanWithChanceToBeTrue(10)],
+			evolutionStages: [this.generateEvolutionStages()],
+			hasMegaEvolution: [this.generateBooleanWithChanceToBeTrue(25)],
+			hasAlternateForm: [this.generateBooleanWithChanceToBeTrue(35)],
 			stats: this.generateStats(),
-			seed: this.seed,
-			generatedOn: new Date(),
+			seed: [this.seed],
+			generatedOn: [new Date()],
 		};
 		return randomMon;
 	};
@@ -73,7 +75,7 @@ class PokemonGenerator {
 	generateBooleanWithChanceToBeTrue(chance) {
 		// Calculates a random number, then compares to the argument chance
 		// Approximately calculates a boolean with a specific chance to be true
-		return this.randomizer(100) <= chance;
+		return this.randomizer(100) <= chance ? "Yes" : "No";
 	}
 
 	generateEvolutionStages() {
