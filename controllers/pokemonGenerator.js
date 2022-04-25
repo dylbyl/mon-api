@@ -23,12 +23,18 @@ class PokemonGenerator {
 	funStatDescriptors = jsonFiles.funStatDescriptors;
 
 	// Puts everything into arrays for now to play nicely with React Native's Section list
-	// TODO rework this, change booleans back to true or false and change to yes/no on UI
+	// TODO stop putting everything in arrays once SectionList is removed from UI
+	// TODO rework this, change booleans back to true or false and change to yes/no on UI side instead
+	// TODO remove types array when SectionList is removed
 	generateMon = function () {
 		let types = this.generateTypes();
 
 		let randomMon = {
 			...types,
+			types: [
+				types.type1,
+				types.type2
+			],
 			baseDesigns: this.generateRandomProperties(this.baseDesigns, 3),
 			descriptors: this.generateRandomProperties(this.descriptors, 3),
 			extraConcepts: this.generateRandomProperties(this.extraConcepts, 3),
@@ -64,11 +70,12 @@ class PokemonGenerator {
 	generateTypes() {
 		// Not all Pokemon have two types, some only have one
 		let hasSecondType = this.generateBooleanWithChanceToBeTrue(75);
-		let types = this.generateRandomProperties(this.types, hasSecondType ? 2 : 1);
+		let types = this.generateRandomProperties(this.types, 2);
 
+		// TODO change this check back to a simple true/false check
 		return {
 			type1: types[0],
-			type2: hasSecondType ? types[1] : null,
+			type2: hasSecondType === "Yes" ? types[1] : null,
 		}
 	}
 
